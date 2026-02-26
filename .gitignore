@@ -1,0 +1,5 @@
+gene_selection/data/TCGA_gene.csv
+*.csv
+*.pth
+*.h5
+__pycache__/
