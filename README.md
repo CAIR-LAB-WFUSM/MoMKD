@@ -1,9 +1,8 @@
 # Momentum Memory for Knowledge Distillation in Computational Pathology (MoMKD)
 
-[![Venue](https://img.shields.io/badge/Venue-CVPR%202026-blue)](#)
-[![Python](https://img.shields.io/badge/Python-3.11-blue)](https://www.python.org/)
-[![CUDA](https://img.shields.io/badge/CUDA-12.8-green)](#)
-[![License](https://img.shields.io/badge/License-Academic%20Use-orange)](#)
+[![arXiv](https://img.shields.io/badge/arXiv-2602.21395-b31b1b.svg)](https://arxiv.org/abs/2602.21395)
+[![DOI](https://img.shields.io/badge/DOI-10.48550/arXiv.2602.21395-blue.svg)](https://doi.org/10.48550/arXiv.2602.21395)
+
 
 Official implementation of the CVPR 2026 paper:
 
@@ -61,19 +60,15 @@ conda env create -f environment.yml
 conda activate MoMKD
 ```
 
-(Optional)
 
-```bash
-pip install -r requirements.txt
-```
-
----
 
 # 📂 Dataset Preparation
 
 ## 1️⃣ Download Dataset
 
-Download **TCGA-BRCA** WSI and paired omics data from the official TCGA repository.
+Download **[TCGA-BRCA](https://portal.gdc.cancer.gov/projects/TCGA-BRCA)** 
+WSI and paired omics data from the official GDC Data Portal.
+
 
 ---
 
@@ -103,7 +98,7 @@ gene_selection/
 Ensure:
 
 - Omics expression file is placed in `/data`
-- Label file `BRCA_processed_with_paths` exists
+- Label file (ready as BRCA.csv) exists
 
 Run:
 
@@ -115,7 +110,7 @@ Default gene selection:
 
 - Top 768 genes  
 - Moderate variation (512–1024) is acceptable  
-- Avoid extreme values  
+- Avoid extreme values (e.g. 1)  
 
 ---
 
@@ -142,7 +137,7 @@ Modify the following variables:
 
 ```bash
 MAIN_CSV_PATH="..."
-LABEL_COLUMN="label"
+LABEL_COLUMN="..."
 POSITIVE_LABEL_VALUE="..."
 ```
 
@@ -152,25 +147,13 @@ Run training:
 bash run.sh
 ```
 
----
 
-# 🔬 Experimental Highlights
-
-| Method | HER2 | PR | ODX |
-|--------|------|----|-----|
-| ABMIL | - | - | - |
-| Multimodal KD | - | - | - |
-| **MoMKD (Ours)** | **↑** | **↑** | **↑** |
-
-(*Full results will be updated upon camera-ready release.*)
-
----
 
 # 💡 Future Improvements
 
 Recent findings in vector quantization suggest:
 
-- Smaller prototype dimensions  
+- Smaller memory dimensions  
 - Compact memory representations  
 
 may further improve generalization.
@@ -178,7 +161,6 @@ may further improve generalization.
 We encourage experimentation with:
 
 - Memory size  
-- Prototype dimension  
 - Momentum coefficient  
 - Decoupling strength  
 
@@ -207,20 +189,18 @@ This project is released for **non-commercial academic research use only**.
 
 # 📌 Citation
 
-If you find this repository useful, please cite:
+If you find this work useful, please cite:
 
 ```bibtex
-@inproceedings{guo2026momkd,
+@article{guo2026momkd,
   title={Momentum Memory for Knowledge Distillation in Computational Pathology},
-  author={Guo, Yongxin and others},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  author={Guo, Yongxin and Lu, Hao and Koyun, Onur C. and Zhu, Zhengjie and Demir, Muhammet Fatih and Gurcan, Metin Nafi},
+  journal={arXiv preprint arXiv:2602.21395},
   year={2026}
 }
 ```
 
-(ArXiv link and official proceedings link will be updated soon.)
 
----
 
 # 📬 Contact
 
